@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.pragra.learning</groupId>
+    <artifactId>framework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <selenium.version>3.141.5</selenium.version>
+        <testng.version>7.0.0</testng.version>
+        <compiler.version>3.8.1</compiler.version>
+        <surefire.version>2.12.4</surefire.version>
+        <testngxml.flie.location>${project.basedir}/testng.xml</testngxml.flie.location>
+        <poi.version>4.1.0</poi.version>
+        <pdf.version>2.0.4</pdf.version>
+        <extentreports.version>3.1.5</extentreports.version>
+    </properties>
+
+    <build>
+        <plugins>
+
+            <!--plugin to define java version-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${testngxml.flie.location}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--depecdencies for the project-->
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-safari-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <!--dependenct to excel files-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <!--Support to read pdf docs,in case to verify data-->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdf.version}</version>
+        </dependency>
+        <!--dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox-parent</artifactId>
+            <version>${pdf.version}</version>
+        </dependency-->
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports.version}</version>
+        </dependency>
+    </dependencies>
+<!--future work for yml config-->
+
+
+
+</project>
