@@ -15,7 +15,7 @@
         <compiler.version>3.8.1</compiler.version>
         <surefire.version>2.12.4</surefire.version>
         <testngxml.flie.location>${project.basedir}/testng.xml</testngxml.flie.location>
-        <poi.version>4.1.0</poi.version>
+        <poi.version>4.1.1</poi.version>
         <pdf.version>2.0.4</pdf.version>
         <extentreports.version>3.1.5</extentreports.version>
     </properties>
